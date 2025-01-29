@@ -26,8 +26,17 @@ function showElementById(showElementIdName){
 
 // redom letter genarate korar utility function templete:
 function getArandomAlphabet(){
-    const alphabets ='abcdefghijklmnopqrstwxyz';
+    const alphabetsString ='abcdefghijklmnopqrstuvwxyz';
+    const alphabets = alphabetsString.split();
     console.log(alphabets);
+
+     console.log(' alpha type = ', typeof alphabets);
     console.log(' alpabets er length holo = ' ,alphabets.length);
+
+    const randomNumber = Math.random() * 25;
+    console.log('random number 0 to 25 = ', randomNumber)
+    const numberAfterRound =  Math.round(randomNumber);
+    
+    console.log('random number round korar por = ', numberAfterRound)
 }
 // node app\utility.js
