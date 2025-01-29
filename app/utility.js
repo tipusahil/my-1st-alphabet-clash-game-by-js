@@ -4,6 +4,10 @@ function play(){
     hideElementById('score_part');
 
     showElementById('play_ground');
+
+
+    // get alphabets
+    getArandomAlphabet();
 }
 
 // tag hide korar / (hidden) class add korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag e hidden class add hoye tag ta hide hobe.
@@ -18,3 +22,12 @@ function showElementById(showElementIdName){
     const show_element =document.getElementById(showElementIdName);
     show_element.classList.remove('hidden');
 }
+
+
+// redom letter genarate korar utility function templete:
+function getArandomAlphabet(){
+    const alphabets ='abcdefghijklmnopqrstwxyz';
+    console.log(alphabets);
+    console.log(' alpabets er length holo = ' ,alphabets.length);
+}
+// node app\utility.js
