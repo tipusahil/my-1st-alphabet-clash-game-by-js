@@ -6,9 +6,10 @@ function play(){
     showElementById('play_ground');
 
 
-    // get alphabets
-   const index = getrandomIndex();
     // getAlphabet(index);
+    const index = getrandomIndex();
+    
+    // get random alphabets
     const random_alphabet_1 = getAlphabet(index);
     console.log(random_alphabet_1);
 }
@@ -28,10 +29,11 @@ function showElementById(showElementIdName){
 
 
 // redom letter genarate korar utility function templete:
-function getAlphabet(){
+function getAlphabet(indexNumber){
     const alphabetsString ='abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetsString.split('');
-    console.log(alphabets);
+    // console.log('alpha check after split =  ', typeof alphabets)
+    console.log(alphabets[indexNumber]);
 }
 
 // random number genarate function: 
