@@ -7,7 +7,10 @@ function play(){
 
 
     // get alphabets
-    getArandomAlphabet();
+   const index = getrandomIndex();
+    // getAlphabet(index);
+    const random_alphabet_1 = getAlphabet(index);
+    console.log(random_alphabet_1);
 }
 
 // tag hide korar / (hidden) class add korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag e hidden class add hoye tag ta hide hobe.
@@ -25,18 +28,21 @@ function showElementById(showElementIdName){
 
 
 // redom letter genarate korar utility function templete:
-function getArandomAlphabet(){
+function getAlphabet(){
     const alphabetsString ='abcdefghijklmnopqrstuvwxyz';
-    const alphabets = alphabetsString.split();
+    const alphabets = alphabetsString.split('');
     console.log(alphabets);
+}
 
-     console.log(' alpha type = ', typeof alphabets);
-    console.log(' alpabets er length holo = ' ,alphabets.length);
-
+// random number genarate function: 
+function getrandomIndex(){
+    
     const randomNumber = Math.random() * 25;
     console.log('random number 0 to 25 = ', randomNumber)
-    const numberAfterRound =  Math.round(randomNumber);
+    const index =  Math.round(randomNumber);
     
-    console.log('random number round korar por = ', numberAfterRound)
+    console.log('random number round korar por index = ', index)
+    return index;
 }
+
 // node app\utility.js
