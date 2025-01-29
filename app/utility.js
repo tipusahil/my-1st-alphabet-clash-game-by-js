@@ -1,9 +1,8 @@
-function play(){
+function play() {
     hideElementById('home_screen');
     hideElementById('score_part');
 
     showElementById('play_ground');
-
 
     // getAlphabet(index);
     const indexNUM = getrandomIndex();
@@ -12,26 +11,36 @@ function play(){
     // get random alphabets
     const alphabets = getAlphabet(indexNUM);
     console.log(alphabets);
-    
+
     const random_1_letter = alphabets[indexNUM];
-    console.log('random indexNUM er maddome alphabets varaible theke random letter' ,random_1_letter);
+    console.log('random indexNUM er maddome alphabets varaible theke random letter', random_1_letter);
 
 
 
     // set random letter to (p)tag/elements value of playground:
     document.getElementById('random_letter').innerHTML = random_1_letter;
+
+
+
+    // jei letter ta playground screen e show korbe sei letter er key_btn tar jate bg color gold hoye take seta setup:
+    const letter_key = document.getElementById(random_1_letter);
+    letter_key.style.backgroundColor = 'green';
+    letter_key.style.color = 'white';
+
+    console.log(`screen e jei letterta deka jai setar key holo: ${letter_key}`);
+
 }
 
 // tag hide korar / (hidden) class add korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag e hidden class add hoye tag ta hide hobe.
-function hideElementById(hideElementIdName){
+function hideElementById(hideElementIdName) {
     const hide_element = document.getElementById(hideElementIdName);
     hide_element.classList.add('hidden');
-    
+
 }
 
 // tag show korar / (hidden) class remove korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag theke hidden class remove hoye tag ta show korbe.
-function showElementById(showElementIdName){
-    const show_element =document.getElementById(showElementIdName);
+function showElementById(showElementIdName) {
+    const show_element = document.getElementById(showElementIdName);
     show_element.classList.remove('hidden');
 }
 
@@ -40,38 +49,53 @@ function showElementById(showElementIdName){
 
 // rendom indexnumber pass korar maddome (alphabet) variable theke oi index er positon er letter ta newar  utility function templete:
 
-function getAlphabet(indexNumber){
+function getAlphabet(indexNumber) {
 
-    const alphabetsString ='abcdefghijklmnopqrstuvwxyz';
+    const alphabetsString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetsString.split('');//object like array kora hoise split er maddome
 
     return alphabets;
 
-const random_letter = alphabets[indexNumber];
+    const random_letter = alphabets[indexNumber];
     // console.log('alpha check after split =  ', typeof alphabets)
     console.log(alphabets);
-    console.log( alphabets[indexNumber]);
-    console.log( ` alpabet variable e ${indexNumber} number position er letter ta holo = ${alphabets[indexNumber]}`);
+    console.log(alphabets[indexNumber]);
+    console.log(` alpabet variable e ${indexNumber} number position er letter ta holo = ${alphabets[indexNumber]}`);
 
     // return alphabets;
 }
 
 // random number genarate function: 
-function getrandomIndex(){
-    
+function getrandomIndex() {
+
     const randomNumber = Math.random() * 25;
     console.log('random number 0 to 25 = ', randomNumber)
-    const index =  Math.round(randomNumber);
-    
+    const index = Math.round(randomNumber);
+
     console.log('random number round korar por index = ', index)
     return index;
 }
 
 
 
+// user click btn value compare.
+function pressedKey(screen_letter) {
+    const btn1 = document.addEventListener('keydown', function (event) {
 
-/* btn click = a hoi thle a */
+        console.log(event.key);
+        // if (event.key === screen_letter) {
+        //     console.log('yes yes')
+
+        // }
+        // else {
+        //     console.log('no no');
+        // }
 
 
-
+        // console.log(event.target.innerHTML , 'you clicked test btn');
+    })
+}
+let span_sum = 0;
+pressedKey(random_1_letter);
+document.getElementById('output').innerHTML = span_sum;
 // node app\utility.js
