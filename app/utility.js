@@ -1,4 +1,3 @@
-
 function play(){
     hideElementById('home_screen');
     hideElementById('score_part');
@@ -7,11 +6,20 @@ function play(){
 
 
     // getAlphabet(index);
-    const index = getrandomIndex();
-    
+    const indexNUM = getrandomIndex();
+    console.log(indexNUM);
+
     // get random alphabets
-    const random_alphabet_1 = getAlphabet(index);
-    console.log(random_alphabet_1);
+    const alphabets = getAlphabet(indexNUM);
+    console.log(alphabets);
+    
+    const random_1_letter = alphabets[indexNUM];
+    console.log('random indexNUM er maddome alphabets varaible theke random letter' ,random_1_letter);
+
+
+
+    // set random letter to (p)tag/elements value of playground:
+    document.getElementById('random_letter').innerHTML = random_1_letter;
 }
 
 // tag hide korar / (hidden) class add korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag e hidden class add hoye tag ta hide hobe.
@@ -28,12 +36,24 @@ function showElementById(showElementIdName){
 }
 
 
-// redom letter genarate korar utility function templete:
+
+
+// rendom indexnumber pass korar maddome (alphabet) variable theke oi index er positon er letter ta newar  utility function templete:
+
 function getAlphabet(indexNumber){
+
     const alphabetsString ='abcdefghijklmnopqrstuvwxyz';
-    const alphabets = alphabetsString.split('');
+    const alphabets = alphabetsString.split('');//object like array kora hoise split er maddome
+
+    return alphabets;
+
+const random_letter = alphabets[indexNumber];
     // console.log('alpha check after split =  ', typeof alphabets)
-    console.log(alphabets[indexNumber]);
+    console.log(alphabets);
+    console.log( alphabets[indexNumber]);
+    console.log( ` alpabet variable e ${indexNumber} number position er letter ta holo = ${alphabets[indexNumber]}`);
+
+    // return alphabets;
 }
 
 // random number genarate function: 
@@ -46,5 +66,12 @@ function getrandomIndex(){
     console.log('random number round korar por index = ', index)
     return index;
 }
+
+
+
+
+/* btn click = a hoi thle a */
+
+
 
 // node app\utility.js
