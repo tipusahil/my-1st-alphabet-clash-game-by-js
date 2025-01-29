@@ -29,30 +29,35 @@
 <body class=" font-poppins min-h-screen bg-[#010313] ">
 
     <!-- main tag start here -->
-    <main class="border-2  border-green-700 max-w-full  bg-contain  bg-center bg-no-repeat min-h-screen  bg-[#010313]  bg-[url(images/background.png)]">
-
+    <main class="border-2 border-black   bg-contain   bg-center bg-no-repeat min-h-screen  bg-[#010313]  bg-[url(images/background.png)]">
+<!-- max-w-full -->
 <!-- section1 start here -->
  <!-- Home screen -->
-<section class="Home hidden space-y-7 justify-center flex flex-col min-h-screen items-center border-2 border-red-700 ">
+<section id="home_screen" class="Home  space-y-7 justify-center flex flex-col min-h-screen items-center  ">
     <h1 class="text-6xl font-anton font-extrabold text-white">ALPHABET CLASH PRO</h1>
     <p class="text-white">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-    <button class="btn bg-white text-black">Play Now</button>
+    <button onclick="play()" class=" btn bg-white text-black">Play Now</button>
 </section>
 <!-- section1 end here -->
 
 
 <!-- section2 start here -->
  <!-- play ground section -->
-<section class="play_ground w-[700px] mx-auto border-2 border-green-700">
+<section id="play_ground" class="play_ground hidden w-[700px] mx-auto ">
 
 
 
 <!-- playground container start -->
- <div class="playground_container  flex flex-col min-h-screen justify-center  items-center ">
+ <div class="playground_container py-5 space-y-5 flex flex-col h-[80%] justify-center  items-center ">
 
 <!-- screen -->
-<div class=" h-[300px] rounded-lg  w-full  text-center bg-[#ffffffb3] border-8 border-[#010313cc]   ">
-  <h3 class="bg-[#010313cc] text-white   inline p-1 rounded-b-lg">Don't watch keyboard  while playing...</h3>
+<div class=" h-[300px] rounded-lg p-0  w-full  text-center bg-[#ffffffb3] border-8 border-[#010313cc]   ">
+  <h3 class="bg-[#010313cc] text-white   inline pt-1 pb-2 px-2 rounded-b-lg">Don't watch keyboard  while playing...</h3>
+
+<div  class=" content-center  h-full">
+  <p class="text-black  text-8xl">Y</p>
+  </div>
+
   </div>
 
 <!-- keyboard -->
@@ -132,7 +137,25 @@
 
 
 <!-- section3 start here -->
-<section class="score_part">
+ <!-- score part -->
+<section id="score_part" class="score_part ">
+
+
+  <div class="score_container  my-20 drop-shadow-xl flex justify-center w-full h-full ">
+    
+    <div class=" bg-[#8000809e] content-center space-y-5 w-[500px] text-center  text-white rounded-lg p-10">
+      <h1 class="text-8xl ">Score : <span>14</span></h1>
+      <button onclick="play_again()" class="btn text-black bg-white border-0">Play Again</button>
+      <p>Practice will make you Pro</p>
+    </div>
+<!-- <style>
+  body{
+    background-color: #8000809e;
+  }
+</style> -->
+  </div>
+
+
 </section>
 <!-- section3 end here -->
         
@@ -154,6 +177,7 @@
 
 
     <!--js file linkup  -->
+    <script src="app/utility.js"></script>
     <script src="app/a.js"></script>
 </body>
 </html>
