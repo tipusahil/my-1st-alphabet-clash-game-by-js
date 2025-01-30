@@ -24,12 +24,17 @@ function play() {
 
     // jei letter ta playground screen e show korbe sei letter er key_btn tar jate bg color gold hoye take seta setup:
     const letter_key = document.getElementById(random_1_letter);
-    letter_key.style.backgroundColor = 'green';
+    letter_key.style.backgroundColor = '#e19f5d';
     letter_key.style.color = 'white';
 
     console.log(`screen e jei letterta deka jai setar key holo: ${letter_key}`);
 
+    // true false ways green & red bg setup
+    pressedKey(random_1_letter);
+    document.getElementById('output').innerHTML = score;
+
 }
+
 
 // tag hide korar / (hidden) class add korar utility function,just call kore argument hisebee kuno tag er id name dilei oi tag e hidden class add hoye tag ta hide hobe.
 function hideElementById(hideElementIdName) {
@@ -76,26 +81,34 @@ function getrandomIndex() {
     return index;
 }
 
+// true hole green hobe,noito red dekane flse hole
 
-
-// user click btn value compare.
-function pressedKey(screen_letter) {
-    const btn1 = document.addEventListener('keydown', function (event) {
-
+let score = 0;
+let sub_life = 0;
+function pressedKey(screenLetter) {
+    document.addEventListener('keydown', function (event) {
         console.log(event.key);
-        // if (event.key === screen_letter) {
-        //     console.log('yes yes')
 
-        // }
-        // else {
-        //     console.log('no no');
-        // }
+        const letter_key = document.getElementById(screenLetter);
 
 
-        // console.log(event.target.innerHTML , 'you clicked test btn');
+        if (event.key === screenLetter) {
+            letter_key.style.backgroundColor = 'green';
+            letter_key.style.color = 'white';
+            score = score + 1;
+            document.getElementById('sum_output_score').innerText = score;
+
+        }
+
+        else {
+            letter_key.style.backgroundColor = 'red';
+            sub_life--;
+            document.getElementById('sub_output_life').innerText = sub_life;
+        }
     })
+
 }
-let span_sum = 0;
-pressedKey(random_1_letter);
-document.getElementById('output').innerHTML = span_sum;
+
+
+
 // node app\utility.js
