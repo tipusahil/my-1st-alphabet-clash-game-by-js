@@ -1,6 +1,7 @@
 function play(){
     hideElementByID ('home_screen')
-    // hideElementByID ()
+    hideElementByID ('score_part')
+    
     showElementByID ('play_ground')
 
 
@@ -9,8 +10,7 @@ function play(){
 
 function hideElementByID(ElementNAMEforHIDE){
     const hide_element = document.getElementById(ElementNAMEforHIDE);
-    hide_element.classList.add('hidden');
-
+    hide_element.classList.add('hidden')
    console.log(hide_element.classList);
 }
 
@@ -18,6 +18,4 @@ function hideElementByID(ElementNAMEforHIDE){
 function showElementByID(ElementNAMEforSHOW) {
     const show_element = document.getElementById(ElementNAMEforSHOW);
     show_element.classList.remove('hidden');
-
-
 }
