@@ -58,16 +58,14 @@ keyCOLOR.style.color = 'black';
 continueGAME();
 
 // callback function for user_clicked key 
-function getKeyPressLETTER(){
-console.log('user clicked key')
+function getKeyPressLETTER(event){
+const playerPressedKEY = event.key;
+console.log('player pressed key is = ',playerPressedKEY);
 }
 document.addEventListener('keyup' , getKeyPressLETTER);//
 
-// keyboard er btn konta click korse seta dekar jonno funciton :
-// function keypressedLETTER(){
-// document.addEventListener('keyup', function (event) {
-//    const userPressedKEY = event.key;
-// console.log(userPressedKEY);
-// });
-// }
-// keypressedLETTER()
+
+// get the expected to press :
+const  currentScreenAlphabet =document.getElementById('random_letter');
+const currentScreenLetter = currentScreenAlphabet.innerHTML;
+console.log('current screen letter is =',currentScreenLetter);
