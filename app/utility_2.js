@@ -51,26 +51,23 @@ keyCOLOR.style.color = 'black';
 
 
 // user clickedk key & random key soman hole loop abr colbe & socre 1 kroe barbe &.color green hobe.
-
-// 
-const user_pressedKEY = keypressedLETTER();
-console.log(user_pressedKEY);
+// const user_pressedKEY = keypressedLETTER();
+// console.log(user_pressedKEY);
 } 
 
 continueGAME();
 
-
+// callback function for user_clicked key 
+function getKeyPressLETTER(){
+console.log('user clicked key')
+}
+document.addEventListener('keyup' , getKeyPressLETTER);//
 
 // keyboard er btn konta click korse seta dekar jonno funciton :
-function keypressedLETTER(){
-document.addEventListener('keyup', function (event) {
-
-   let userPressedKEY = event.key;
-console.log(userPressedKEY)
-    return userPressedKEY;
-   
-});
-
-}
-
+// function keypressedLETTER(){
+// document.addEventListener('keyup', function (event) {
+//    const userPressedKEY = event.key;
+// console.log(userPressedKEY);
+// });
+// }
 // keypressedLETTER()
