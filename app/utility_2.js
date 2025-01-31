@@ -47,6 +47,14 @@ set_random_1_letter.innerHTML = random_1_letter;
 const keyCOLOR = document.getElementById(random_1_letter);
 keyCOLOR.style.backgroundColor ='#e19f5d';
 keyCOLOR.style.color = 'black';
+
+
+
+// user clickedk key & random key soman hole loop abr colbe & socre 1 kroe barbe &.color green hobe.
+
+// 
+const user_pressedKEY = keypressedLETTER();
+console.log(user_pressedKEY);
 } 
 
 continueGAME();
@@ -56,7 +64,13 @@ continueGAME();
 // keyboard er btn konta click korse seta dekar jonno funciton :
 function keypressedLETTER(){
 document.addEventListener('keyup', function (event) {
-console.log(event.key);
+
+   let userPressedKEY = event.key;
+console.log(userPressedKEY)
+    return userPressedKEY;
+   
 });
 
 }
+
+// keypressedLETTER()
