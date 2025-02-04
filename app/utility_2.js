@@ -26,7 +26,7 @@ function setBgColorByID(keyIdNAME) {
 // }
 
 function removeBgColorByID(keyIdNAME1) {
-    let colorRemoveID =document.getElementById(keyIdNAME1);
+    const colorRemoveID =document.getElementById(keyIdNAME1);
 colorRemoveID.classList.remove('bg-orange-400');
     // colorRemoveID.classList.remove('bg-orange-400');
     console.log(colorRemoveID.classList);
@@ -64,15 +64,47 @@ const currentScreenLetter = screenLetter1.toLowerCase();
 console.log('current screen letter is =',currentScreenLetter);
 
 // user true btn click korle green hobe false hole red hobe sei condi:
-const keyColor1 = document.getElementById(currentScreenLetter);
 
 if( currentScreenLetter === playerPressedKEY) {
     console.log('you have pressed ' ,currentScreenLetter);
     continueGAME()
-    removeBgColorByID(keyColor1.id);
-    // keyCOLOR1.style.backgroundColor = 'green';
+    
+    //1. get the score element
+    // 2.score element text convert string type to number type,for increase score value
+    // 3. update score element value as a new score
+   const scoreElement =document.getElementById('current_Score');
+    const scoreElementText = scoreElement.innerText;
+     const scoreElementTextToNUMBER = parseInt(scoreElementText);
+
+    //  new score:
+    const newScore = currentScore + 1;
+console.log(newScore);
+
+//4.show & set the newScore variable's value as a score element innerText
+scoreElement.innerText = newScore;
+
+    removeBgColorByID(currentScreenLetter);
+    keyCOLOR1.style.backgroundColor = 'green';
 }else{
+     // 1. get the life element 
+     const lifeElement = document.getElementById('current_life');
+     const lifeElementText = lifeElement.innerText;
+     const lifeElementTextToNUMBER = parseInt(lifeElementText);
+     
+     // 2.life element er innertext default vabe string thake tai string to number type datai convert korte hobe, karon 1 kore jog/biyok korle jate mathematically kaj kore,string er sate to number jog/biyok hobena tai stirng theke number e convert korte hobe.
+     
+     
+     // 3.then oi life element er innertext number type datai ortat parseInt() korar pore sei innertext er sate 1 kore increament or dicreament kortee hobe. taw condition ways. 
+     const newLife =lifeElementTextToNUMBER -1;
+ 
+     // 4.sei notun kore set kora value ta oi life/score element er innerText hisebe abr set kore dite hobe, jate output e update hoi.
+ 
+     lifeElement.innerText = newLife;
+ 
+
+
     keyColor1.style.backgroundColor = 'red';
+
 }
 
 }
