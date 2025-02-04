@@ -33,6 +33,16 @@ colorRemoveID.classList.remove('bg-orange-400');
 }
 
 
+/* 
+1.
+*/
+function getElementValueByID(elementID){
+const element = document.getElementById(elementID);
+
+
+}
+
+
 
 // 2.get one letter from  alpabets: 
 function get_A_Random_AlphabetS(){
@@ -68,7 +78,18 @@ console.log('current screen letter is =',currentScreenLetter);
 if( currentScreenLetter === playerPressedKEY) {
     console.log('you have pressed ' ,currentScreenLetter);
     continueGAME()
-    
+
+
+
+
+
+
+
+
+
+
+    // -----------------------------------------------------------------------------------------------
+    //2. direct niome korte caile niser niome korte hobe: 
     //1. get the score element
     // 2.score element text convert string type to number type,for increase score value
     // 3. update score element value as a new score
@@ -77,15 +98,15 @@ if( currentScreenLetter === playerPressedKEY) {
      const scoreElementTextToNUMBER = parseInt(scoreElementText);
 
     //  new score:
-    const newScore = currentScore + 1;
-console.log(newScore);
+    const newScore = scoreElementTextToNUMBER + 1;
 
 //4.show & set the newScore variable's value as a score element innerText
 scoreElement.innerText = newScore;
 
     removeBgColorByID(currentScreenLetter);
     keyCOLOR1.style.backgroundColor = 'green';
-}else{
+}
+else{
      // 1. get the life element 
      const lifeElement = document.getElementById('current_life');
      const lifeElementText = lifeElement.innerText;
