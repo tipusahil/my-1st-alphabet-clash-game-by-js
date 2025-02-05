@@ -192,6 +192,7 @@ function  continueGAME(){
 }
 
 function gameOver() {
+    // life er value jodi 0 er soman hoi ei gameover function call hove, & score_container ta show korbe.: 
 hideElementByID('home_screen');
 hideElementByID('play_ground');
 showElementByID('score_part');
