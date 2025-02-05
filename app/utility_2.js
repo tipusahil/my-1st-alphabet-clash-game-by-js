@@ -116,6 +116,7 @@ setTextElementNewValueByID('current_Score', updateScoreBy1)
 // //4.show & set the newScore variable's value as a score element innerText
 // scoreElement.innerText = newScore;
 
+// user press key & screen er letter jodi soman hoi thle oi key er bg color change hoye jabe.
     removeBgColorByID(currentScreenLetter);
     playerPressedKEY.style.backgroundColor = 'green';
 }
