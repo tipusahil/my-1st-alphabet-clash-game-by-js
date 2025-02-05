@@ -175,14 +175,11 @@ function  continueGAME(){
     hideElementByID ('score_part')
     
     showElementByID ('play_ground')
-
-// user play dilei life & score er man reset hoye default ta jeta dewa hoise otai hobe.
-setTextElementNewValueByID('current_score' , 0);
-setTextElementNewValueByID('current_life' , 10);
-
-
-    continueGAME()
-
+    // user play dilei life & score er man reset hoye default ta jeta dewa hoise otai hobe.
+    setTextElementNewValueByID('current_Score' , 0);
+    setTextElementNewValueByID('current_life' , 10);
+    continueGAME();
+    
 
 }
 
@@ -190,4 +187,10 @@ function gameOver() {
 hideElementByID('home_screen');
 hideElementByID('play_ground');
 showElementByID('score_part');
+
+
+const final_score = document.getElementById('game_end_score');
+const scoreIS =document.getElementById('current_Score');
+final_score.innerText = scoreIS.innerText;
+
 }
