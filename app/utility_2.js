@@ -36,13 +36,18 @@ colorRemoveID.classList.remove('bg-orange-400');
 /* 
 1.
 */
-function getElementValueByID(elementID){
+function getTextElementValueByID(elementID){
 const element = document.getElementById(elementID);
+const elementText= element.innerText ;
+const elementTextStringToNumber = parseInt(elementText);
 
-
+return elementTextStringToNumber;
 }
 
-
+function setTextElementNewValueByID(elementId, updateValue) {
+    const element1 = document.getElementById(elementId);
+    element1.innerText = updateValue;
+}
 
 // 2.get one letter from  alpabets: 
 function get_A_Random_AlphabetS(){
@@ -76,55 +81,72 @@ console.log('current screen letter is =',currentScreenLetter);
 // user true btn click korle green hobe false hole red hobe sei condi:
 
 if( currentScreenLetter === playerPressedKEY) {
-    console.log('you have pressed ' ,currentScreenLetter);
+
     continueGAME()
 
+    //age theke function banai reke function call korar maddome score & life er value barano komanu:
+   const currentScore1 = getTextElementValueByID('current_Score');
+   console.log('current score is = ',currentScore1)
+  updateScoreBy1 = currentScore1 + 1;
+
+//    set new value:
+setTextElementNewValueByID('current_Score', updateScoreBy1)
 
 
 
 
 
+//     // -----------------------------------------------------------------------------------------------
+//     //2. direct niome korte caile niser niome korte hobe: 
+//     //1. get the score element
+//     // 2.score element text convert string type to number type,for increase score value
+//     // 3. update score element value as a new score
+//    const scoreElement =document.getElementById('current_Score');
+//     const scoreElementText = scoreElement.innerText;
+//      const scoreElementTextToNUMBER = parseInt(scoreElementText);
 
+//     //  new score:
+//     const newScore = scoreElementTextToNUMBER + 1;
 
-
-
-    // -----------------------------------------------------------------------------------------------
-    //2. direct niome korte caile niser niome korte hobe: 
-    //1. get the score element
-    // 2.score element text convert string type to number type,for increase score value
-    // 3. update score element value as a new score
-   const scoreElement =document.getElementById('current_Score');
-    const scoreElementText = scoreElement.innerText;
-     const scoreElementTextToNUMBER = parseInt(scoreElementText);
-
-    //  new score:
-    const newScore = scoreElementTextToNUMBER + 1;
-
-//4.show & set the newScore variable's value as a score element innerText
-scoreElement.innerText = newScore;
+// //4.show & set the newScore variable's value as a score element innerText
+// scoreElement.innerText = newScore;
 
     removeBgColorByID(currentScreenLetter);
-    keyCOLOR1.style.backgroundColor = 'green';
+    playerPressedKEY.style.backgroundColor = 'green';
 }
 else{
-     // 1. get the life element 
-     const lifeElement = document.getElementById('current_life');
-     const lifeElementText = lifeElement.innerText;
-     const lifeElementTextToNUMBER = parseInt(lifeElementText);
+
+  //age theke function banai reke function call korar maddome score & life er value barano komanu:
+
+  const currentLife = getTextElementValueByID('current_life');
+//   console.log('current life is = ',currentLife)
+updateLifeBy1 = currentLife - 1;
+
+//    set new value:
+setTextElementNewValueByID('current_life', updateLifeBy1)
+
+
+
+//     // -----------------------------------------------------------------------------------------------   //2. direct niome korte caile niser niome korte hobe: 
+
+    //  // 1. get the life element 
+    //  const lifeElement = document.getElementById('current_life');
+    //  const lifeElementText = lifeElement.innerText;
+    //  const lifeElementTextToNUMBER = parseInt(lifeElementText);
      
-     // 2.life element er innertext default vabe string thake tai string to number type datai convert korte hobe, karon 1 kore jog/biyok korle jate mathematically kaj kore,string er sate to number jog/biyok hobena tai stirng theke number e convert korte hobe.
+    //  // 2.life element er innertext default vabe string thake tai string to number type datai convert korte hobe, karon 1 kore jog/biyok korle jate mathematically kaj kore,string er sate to number jog/biyok hobena tai stirng theke number e convert korte hobe.
      
      
-     // 3.then oi life element er innertext number type datai ortat parseInt() korar pore sei innertext er sate 1 kore increament or dicreament kortee hobe. taw condition ways. 
-     const newLife =lifeElementTextToNUMBER -1;
+    //  // 3.then oi life element er innertext number type datai ortat parseInt() korar pore sei innertext er sate 1 kore increament or dicreament kortee hobe. taw condition ways. 
+    //  const newLife =lifeElementTextToNUMBER -1;
  
-     // 4.sei notun kore set kora value ta oi life/score element er innerText hisebe abr set kore dite hobe, jate output e update hoi.
+    //  // 4.sei notun kore set kora value ta oi life/score element er innerText hisebe abr set kore dite hobe, jate output e update hoi.
  
-     lifeElement.innerText = newLife;
+    //  lifeElement.innerText = newLife;
  
 
 
-    keyColor1.style.backgroundColor = 'red';
+    playerPressedKEY.style.backgroundColor = 'red';
 
 }
 
