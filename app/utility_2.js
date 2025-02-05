@@ -101,7 +101,7 @@ setTextElementNewValueByID('current_Score', updateScoreBy1)
 
 
 
-//     // -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
 //     //2. direct niome korte caile niser niome korte hobe: 
 //     //1. get the score element
 //     // 2.score element text convert string type to number type,for increase score value
