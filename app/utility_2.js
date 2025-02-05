@@ -86,10 +86,7 @@ if( currentScreenLetter === playerPressedKEY) {
 
     //age theke function banai reke function call korar maddome score & life er value barano komanu:
    const currentScore1 = getTextElementValueByID('current_Score');
-   console.log('current score is = ',currentScore1)
   updateScoreBy1 = currentScore1 + 1;
-
-//    set new value:
 setTextElementNewValueByID('current_Score', updateScoreBy1)
 
 
@@ -119,13 +116,15 @@ else{
   //age theke function banai reke function call korar maddome score & life er value barano komanu:
 
   const currentLife = getTextElementValueByID('current_life');
-//   console.log('current life is = ',currentLife)
 updateLifeBy1 = currentLife - 1;
-
-//    set new value:
 setTextElementNewValueByID('current_life', updateLifeBy1)
 
 
+
+// life 0 hoye gele playground & home screen hide kore final score part dekate hole:
+if(updateLifeBy1 === 0) {
+    gameOver();
+}
 
 //     // -----------------------------------------------------------------------------------------------   //2. direct niome korte caile niser niome korte hobe: 
 
@@ -167,14 +166,28 @@ function  continueGAME(){
   // random sonka jeta hobe oi mane jei key button id html e newa hoise,jmn a btn er jonno a name id newa hoise evabe oi keybtn er id er maddome oi btn ta ta js e select kora hobe.then setar backgroundColor golder kora hbe :
   setBgColorByID(random_1_letter);
   }   
-  continueGAME()
+//   continueGAME()
 
   
   function play(){
+    // user play dilei home screen & final score container hidee hoye jabe,playground ta show korbe.
     hideElementByID ('home_screen')
     hideElementByID ('score_part')
     
     showElementByID ('play_ground')
-    // continueGAME()
+
+// user play dilei life & score er man reset hoye default ta jeta dewa hoise otai hobe.
+setTextElementNewValueByID('current_score' , 0);
+setTextElementNewValueByID('current_life' , 10);
+
+
+    continueGAME()
+
+
 }
 
+function gameOver() {
+hideElementByID('home_screen');
+hideElementByID('play_ground');
+showElementByID('score_part');
+}
