@@ -71,6 +71,14 @@ function getKeyPressLETTER(event){
 const playerPressedKEY = event.key;
 console.log('player pressed key is = ',playerPressedKEY);
 
+
+// player (esc) escape btn press korle game over hobe:
+if(playerPressedKEY === 'Escape'){
+gameOver();
+}
+
+
+
 // get the expected to press :
 const  currentScreenAlphabet =document.getElementById('random_letter');
 const screenLetter1 = currentScreenAlphabet.innerText;
@@ -123,7 +131,7 @@ setTextElementNewValueByID('current_life', updateLifeBy1)
 
 // life 0 hoye gele playground & home screen hide kore final score part dekate hole:
 if(updateLifeBy1 === 0) {
-    gameOver();
+    gameOver()
 }
 
 //     // -----------------------------------------------------------------------------------------------   //2. direct niome korte caile niser niome korte hobe: 
@@ -188,9 +196,16 @@ hideElementByID('home_screen');
 hideElementByID('play_ground');
 showElementByID('score_part');
 
-
+// game game over howar smy last jei score ta thake ota score_part er score er vlaue hisebe dynamically set:
 const final_score = document.getElementById('game_end_score');
 const scoreIS =document.getElementById('current_Score');
 final_score.innerText = scoreIS.innerText;
 
+ // ✅ Last pressed key background remove
+//  const lastScreenLetter = document.getElementById('random_letter').innerText.toLowerCase();
+//  removeBgColorByID(lastScreenLetter);
+
+const lastScreenLetter = document.getElementById('random_letter').innerText.toLowerCase();
+console.log(`last screen er letter ta holo =`,lastScreenLetter)
+removeBgColorByID(lastScreenLetter);
 }
