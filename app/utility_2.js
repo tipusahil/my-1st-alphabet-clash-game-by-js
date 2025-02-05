@@ -123,7 +123,6 @@ setTextElementNewValueByID('current_Score', updateScoreBy1)
 else{
 
   //age theke function banai reke function call korar maddome score & life er value barano komanu:
-
   const currentLife = getTextElementValueByID('current_life');
 updateLifeBy1 = currentLife - 1;
 setTextElementNewValueByID('current_life', updateLifeBy1)
